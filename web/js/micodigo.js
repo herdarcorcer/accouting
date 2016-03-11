@@ -9,7 +9,8 @@ $(document).ready(function() {
             data: $("#frm1").serialize(),
             beforeSend: function()
             {
-                $("#mensaje").html("espere un momento");
+                $("#mensaje").html("");
+                
             },
             success: function(res)
             {

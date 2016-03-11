@@ -10,11 +10,12 @@
     <head>
         <script src="js/jquery.js" type="text/javascript"></script>
         <script src="js/micodigo.js" type="text/javascript"></script>
+        <link href="css/miestilo.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>ACCOUNTING</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        
         
     <sql:setDataSource 
         var="connection"
@@ -23,10 +24,10 @@
         user="root" password=""
         />
     <sql:query var="result" dataSource="${connection}">
-        SELECT number,name FROM accounts
+        SELECT number,name FROM accounts 
     </sql:query>
         <form method="get" id="frm1" action="verlist.jsp">
-    
+        <%@ include file="WEB-INF/jspf/banner.jspf" %><br>
         <select id="lstdep" name="lstdep" >
                         <c:forEach 
                 var="values" 
@@ -36,9 +37,13 @@
         </select>
             <br><br>
             <input type="submit" value="Buscar">
+            <input type="button" value="restablecer" onclick = "location='index.jsp'"/>
         </form>
-        <div id="mensaje"></div>
-     
+        
+        <div id="mensaje">
+            
+        </div>
+       
 
     
     </body>
